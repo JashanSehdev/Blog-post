@@ -10,15 +10,15 @@ body{
 }
 .navbar {
     font-family: "Playwrite DE Grund", cursive;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin:auto;
-    margin-bottom: 10px;
-    padding:20px 100px;
-    font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10;
 }
 .navbar > li {
     text-decoration: none;
@@ -37,9 +37,14 @@ body{
 
 /* for all anchor tags*/
 .navbar a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 30px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a :hover {
+  color: var(--accent-color);
 }
 
 /* CSS for header*/
@@ -129,6 +134,22 @@ main {
 
 .blog-post div {
     padding: 20px;
+}
+
+
+/* Create post  */
+
+.create-post {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    border-radius: 100px;
+    padding: 10px;
+    background: linear-gradient(135deg, #fce3ff, #da84da, #fff3e0);
+    border: none;;
+
+
 }
 @media(max-width: 768px){
     .navbar{

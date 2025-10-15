@@ -1,0 +1,146 @@
+/*
+    this css file is for read page
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Questrial&display=swap");
+
+:root {
+  --navbar: rgba(0, 0, 0, 0.1);
+  --text-color: #222;
+  --accent-color: #ff6b6b;
+  --light-bg: #fafafa;
+  --max-width: 900px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+nav {
+  font-family: "Playwrite DE Grund", cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+nav h2 {
+  font-size: 28px;
+  color: var(var(--accent-color));
+}
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a :hover {
+  color: var(--accent-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+  font-family: "Questrial", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111;
+}
+.image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.short-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  nav h2 {
+    font-size: 22px;
+  }
+  main {
+    width: 95%;
+    padding: 20px;
+  }
+  main h2 {
+    font-size: 2rem;
+  }
+  .short-desc {
+    font-size: 1rem;
+  }
+
+  .desc{
+    font-size: 0.95rem;
+  }
+}
+
+@media( max-width: 480px){
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav h2 {
+        font-size : 20px;
+    }
+
+    nav a {
+        font-size : 0.9rem;
+    }
+
+    main {
+        margin : 20px auto;
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 1.6 rem
+    }
+
+    main h2 {
+        font-size: 1.6rem;
+    }
+
+}
