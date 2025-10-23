@@ -87,6 +87,7 @@ body {
   background-color: var(--card-bg);
   outline: none;
   transition: .3s;
+  color: #00CAFF;
 }
 
 .header input:focus {
@@ -108,11 +109,6 @@ body {
   align-items: center;
   cursor: pointer;
   transition: .3s;
-}
-
-#create-post img {
-  width: 22px;
-  filter: invert(100%);
 }
 
 .create-post:hover {

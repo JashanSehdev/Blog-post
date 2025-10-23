@@ -1,10 +1,6 @@
     
     let database =  JSON.parse(localStorage.getItem("data") || "[]");
-    
-    console.log(database);
-    
- 
-
+     
     let container = document.getElementsByClassName("blog-collection");
 
 
