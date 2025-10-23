@@ -1,193 +1,205 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Questrial&display=swap');
-*{
-    margin: 0;
-    padding: 0;
+/* ✅ Global Styling */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --primary: #007bff;
+  --card-bg: #f4f4f4;
+  --border-color: #ddd;
+  --a-color: #00CAFF; 
+  --a1-color: #F5004F;
 }
 
-body{
-    font-family: "Questrial", sans-serif;
+/* ✅ Automatic Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --text-color: #f5f5f5;
+    --primary: #4da6ff;
+    --card-bg: #1b1b1b;
+    --border-color: #333;
+  }
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ✅ Navbar */
 .navbar {
-    font-family: "Playwrite DE Grund", cursive;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  z-index: 10;
-}
-.navbar > li {
-    text-decoration: none;
-    list-style: none;
-
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.navbar > div {
-    display: flex;
-    justify-content: space-evenly;
-    align-items:center;
-    list-style: none;
-    gap:30px;
-
+.navbar h2 {
+  font-size: 24px;
+  color: var(--primary);
 }
 
-/* for all anchor tags*/
 .navbar a {
+  margin-left: 20px;
   text-decoration: none;
-  color: #555;
+  color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: .3s;
 }
 
-.navbar a :hover {
-  color: var(--accent-color);
+.navbar a:hover {
+  color: var(--primary);
 }
 
-/* CSS for header*/
+/* ✅ Header Section */
 .header {
-    margin-top: 2rem;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
- 
+  text-align: center;
+  margin: 40px 20px;
 }
 
-.header>input {
-    width: 50%;
-    min-width: 16px;
-    min-height: 40px;
-    text-align: center;
-    color: black;
-    font-size: 20px;
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
-.header > h1 {
-    font-family: "Playwrite DE Grund", cursive;
-    margin-bottom: 20px;
-    font-size: 100px;
-}
-.header > p{
-    margin-bottom: 100px;
-    font-family: "Questrial", sans-serif;
-    font-size: 20px;
+.header p {
+  font-size: 16px;
+  opacity: .8;
 }
 
-/* CSS for Footer */
-
-
-.footer {
-    background-color: #F5F5F5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height:10rem;
-    justify-content: center;
-}
-.footer div {
-    display: flex;
-    gap:20px;
-    margin-bottom: 10px;
+/* ✅ Search Bar */
+.header input {
+  margin-top: 20px;
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  outline: none;
+  transition: .3s;
 }
 
-.footer  a {
-    font-size: 10px;
-    text-decoration: none;
-    color: #544B44;
-    font-size: 20px;
-}
-.footer h6 {
-    font-size: larger
+.header input:focus {
+  border-color: var(--primary);
 }
 
-main {
-    max-width:1200px;
-    margin:auto;
-    padding:2rem;
-
-    background: linear-gradient(135deg, #fce3ff, #ffd6e8, #fff3e0);
-
+/* ✅ Create Post Button */
+#create-post {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
 }
 
-.blog-collection{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:20px;
+#create-post img {
+  width: 22px;
+  filter: invert(100%);
+}
+
+.create-post:hover {
+  transform: scale(1.08);
+}
+
+/* ✅ Blog Cards Grid */
+.blog-collection {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
 }
 
 .blog-post {
-    
-    max-width: 300px;
-    max-height:400px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: .3s;
 }
 
-.blog-post img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+.blog-post:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
 }
 
-.blog-post div {
-    padding: 20px;
+.blog-post h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--primary);
 }
 
-
-/* Create post  */
-
-.create-post {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-
-    border-radius: 100px;
-    padding: 10px;
-    background: linear-gradient(135deg, #fce3ff, #da84da, #fff3e0);
-    border: none;;
-
-
+.blog-post p {
+  font-size: 14px;
+  opacity: .8;
+  margin-bottom: 3px;
 }
-@media(max-width: 768px){
-    .navbar{
-        flex-direction:column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-    .navbar h2{
-        font-size: 30px;
-    }
 
-    .navbar a{
-        font-size:18px;
-    }
+.blog-post a {
+  text-decoration: none;
+  color: var(--a-color);
+  opacity: .8;
+}
 
-    .header > h1{
-        font-size:40px;
-    }
+#edit{
+color: var(--a1-color);
+margin-left:1rem;
+}
 
-    .header > p {
-        font-size: 16px;
-        text-align: center;
-        padding: 0 20px;
-        margin-bottom: 40px;
-    }
+/* ✅ Footer */
+.footer {
+  text-align: center;
+  padding: 25px 20px;
+  border-top: 1px solid var(--border-color);
+}
 
-    .header > input {
-        width: 80%;
-        min-width: 0;
-        font-size: 16px;
-        
-    }
+.footer a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  opacity: .8;
+}
 
-    header {
-        margin-bottom: 35px;    
-    }
-    img {
-        width:100%;
-        height: auto;
-    }
+.footer a:hover {
+  color: var(--primary);
+}
+
+.footer h6 {
+  margin-top: 10px;
+  opacity: .6;
+}
+
+/* ✅ Responsive Tweaks */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header h1 {
+    font-size: 34px;
+  }
+  .header input {
+    width: 90%;
+  }
 }

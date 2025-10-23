@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+    <link rel="stylesheet" href="../stylesheets/edit-post.css">
+</head>
+<body>
+    <nav>
+        <h2>Mr. Blog</h2>
+        <a href="./index.html">Back to home</a>
+    </nav>
+
+    <main>
+        <h1>Edit Blog</h1>
+
+        <form id="edit-post">
+            <input type="text" id="title" placeholder="Title" required>
+
+            <textarea id="small-area" placeholder="Short description" required></textarea>
+
+            <textarea id="big-area" placeholder="Full content" required oninput="autoResize(this)"></textarea>
+
+            <div class="btn-group">
+                <button type="submit">Update</button>
+                <button type="button" id="delete" style="background-color:#F5004F ;">delete</button>
+                <button type="button" id="cancel">Cancel</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="../scripts/edit.js"></script>
+</body>
+</html>
