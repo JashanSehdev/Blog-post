@@ -21,7 +21,7 @@ document.querySelector("#send-post").addEventListener("submit",(e)=>{
 })
 
 document.querySelector('#cancel').addEventListener("click",()=>{
-    window.location.href = "./index.html"
+    window.location.href = "../index.html"
 })
 
 function autoResize(element) {

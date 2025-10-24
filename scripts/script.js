@@ -11,13 +11,13 @@
             <div>
                 <h1>${e.title}</h1>
                 <p>${e.sub_title}</p>
-                <a href="read.html?id=${e.id}">Read</a>
-                <a href="edit-post.html?id=${e.id}" id="edit" >Edit</a>
+                <a href="./html/read.html?id=${e.id}">Read</a>
+                <a href="./html/edit-post.html?id=${e.id}" id="edit" >Edit</a>
             </div>
             </div>
         `
     ).join("")
 
     document.getElementById("create-post").addEventListener("click", () => {
-        window.location.href = "./create-post.html"
+        window.location.href = "./html/create-post.html"
     })

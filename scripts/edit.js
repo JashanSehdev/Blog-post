@@ -38,14 +38,14 @@ container.addEventListener("submit", (e) => {
 
     localStorage.setItem("data",JSON.stringify(dataSet))
     window.alert ("your post has been updates")
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
   } else {
     window.alert("An ERROR occured, we can't update. please try again")
   }
 });
 
 document.querySelector("#cancel").addEventListener("click", () => {
-  window.location.href = "./index.html";
+  window.location.href = "../index.html";
 });
 
 //delete element
@@ -55,7 +55,7 @@ document.querySelector("#delete").addEventListener("click",()=>{
         dataSet.splice(index, 1);
         localStorage.setItem("data", JSON.stringify(dataSet))
         window.alert("Your POST has been deleted")
-        window.location.href = "./index.html"
+        window.location.href = "../index.html"
     }
     else {
         window.alert("An error occured, please try again")
