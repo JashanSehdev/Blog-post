@@ -17,7 +17,7 @@ document.querySelector("#send-post").addEventListener("submit",(e)=>{
     dataSet.push(data);
     localStorage.setItem("data" ,JSON.stringify(dataSet));
 
-    window.location.href = "index.html" // to redirect to Home
+    window.location.href = "../index.html" // to redirect to Home
 })
 
 document.querySelector('#cancel').addEventListener("click",()=>{
